@@ -1,16 +1,18 @@
 const HomeScreen = {
   render: async () => {
     let products = [];
+    // get data from the server
     try {
       const response = await fetch("http://localhost:5000/api/products");
       if (!response || !response.ok) {
         return `<div> Error in getting data</div>`;
       }
       products = await response.json();
+      console.log(products);
     } catch (error) {
       alert(`error ${error.message}`);
     }
-    console.log(products);
+
     return `<ul class ="products">
     ${products
       .map(
