@@ -1,8 +1,16 @@
-import data from "../data.js";
-
 const HomeScreen = {
-  render: () => {
-    const { products } = data;
+  render: async () => {
+    let products = [];
+    try {
+      const response = await fetch("http://localhost:5000/api/products");
+      if (!response || !response.ok) {
+        return `<div> Error in getting data</div>`;
+      }
+      products = await response.json();
+    } catch (error) {
+      alert(`error ${error.message}`);
+    }
+    console.log(products);
     return `<ul class ="products">
     ${products
       .map(
