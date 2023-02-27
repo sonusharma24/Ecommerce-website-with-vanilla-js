@@ -40,6 +40,10 @@ header{
     grid-area: header;
     background-color:var(--bg-primary);
     color:var(--font-primary);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: .70rem;
 }
 header a{
     color: var(--font-primary);
