@@ -103,11 +103,12 @@ border-top:0.2rem #e0e0e0 solid;
 /* rating  */
 .rating{
     color:#ffc000;
-    font-size: 1.4rem;
+    font-size: 1.8rem;
 }
 
 .rating span:last-child{
     color: #444444;
+    font-size: 1.4rem;
 }
 
 /* footer  */
