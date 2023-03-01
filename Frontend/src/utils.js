@@ -3,6 +3,8 @@ export const parseResquestUrl = () => {
   console.log(url);
   const request = url.split("/");
   console.log(request[2]);
+  console.log(request[1]);
+
   return {
     resource: request[1],
     id: request[2],

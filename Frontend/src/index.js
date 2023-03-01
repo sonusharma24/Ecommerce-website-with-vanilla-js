@@ -13,9 +13,11 @@ const router = async () => {
     (request.resource ? `/${request.resource}` : "/") +
     (request.id ? `/:id` : "") +
     (request.verb ? `/${request.verb}` : "");
+  console.log(request.verb);
   const screen = routes[parseUrl] ? routes[parseUrl] : Error404Screen;
   const main = document.getElementById("main-container");
   main.innerHTML = await screen.render();
+  await screen.afterRender();
 };
 window.addEventListener("load", router);
 window.addEventListener("hashchange", router);

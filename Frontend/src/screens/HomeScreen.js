@@ -1,11 +1,12 @@
 import Rating from "../components/Rating.js";
+import { apiUrl } from "../config.js";
 
 const HomeScreen = {
   render: async () => {
     let products = [];
     // get data from the server
     try {
-      const response = await fetch("http://localhost:4000/api/products");
+      const response = await fetch(`${apiUrl}api/products`);
       if (!response || !response.ok) {
         return `<div> Error in getting data</div>`;
       }

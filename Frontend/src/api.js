@@ -3,7 +3,7 @@ import { apiUrl } from "./config.js";
 export const getProduct = async (id) => {
   console.log(id);
   try {
-    const response = await fetch(`http://localhost:4000/api/products/${id}`);
+    const response = await fetch(`${apiUrl}api/products/${id}`);
     if (!response.ok) {
       throw new Error(`data is not comming from the server`);
     }
